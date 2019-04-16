@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Markdown Editor</title>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-light bg-secondary mb-5">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <span class="d-inline-block align-top text-white">Markdown Editor</span>
+      </a>
+      <div class="dropdown">
+        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Download Markdown
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" data-file-extension="html" href="#">Download HTML file</a>
+          <a class="dropdown-item" data-file-extension="md" href="#">Download Mediawiki file</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- /Navbar -->
+  <!-- Content -->
+  <div class="content container d-flex justify-content-between">
+    <div class="form-group">
+      <textarea class="form-control" autofocus="autofocus" id="input"></textarea>
+    </div>
+    <div id="preview-div"></div>
+  </div>
+  <!-- /Content -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+</body>
+</html>
