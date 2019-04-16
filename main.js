@@ -98,12 +98,12 @@ function splitParagraph(text) {
         } else {
           // add logic for italic in future itaration
         }
-          break;
+        break;
       default:
         fragments.push(
           {type: 'normal',
            content: takeNormal()});
-          break; 
+        break; 
     } 
   }
   return fragments;
