@@ -1,41 +1,3 @@
-const input = document.querySelector('#input');
-const previewDiv = document.querySelector('#preview-div');
-const exportLinks = document.querySelectorAll('.dropdown-item');
-
-window.onload = () => {
-  input.value = 'Write your markdown here...'
-  input.focus()
-  updatePreview()
-};
-
-exportLinks.forEach(link => link.onclick = (e) => {
-  const link = e.target
-  const fileExtension = link.dataset.fileExtension;
-  let markdown
-  // here we can add more cases for more exporters
-  switch(fileExtension) {
-    case 'html':
-      markdown = previewDiv.innerHTML
-      break;
-    case 'md':
-      markdown = input.value
-      break;
-  }
-  link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(markdown);
-  link.download = `markdown.${fileExtension}`;
-})
-
-input.addEventListener('input', updatePreview);
-  
-function updatePreview() {
-  while (previewDiv.firstChild) {
-    previewDiv.removeChild(previewDiv.firstChild);
-  }
-  createCompleteHtml().forEach(htmlElement => {
-    previewDiv.appendChild(htmlElement)
-  })
-}
-
 function createCompleteHtml() {
   const paragraphs = input.value.split("\n");
   const processedParagraphs = paragraphs.map(paragraph => processParagraph(paragraph))
@@ -94,7 +56,7 @@ function splitParagraph(text) {
         if (text.charAt(1) == '*') {
           fragments.push(
             {type: "bold",
-             content: takeUpTo('**')});
+              content: takeUpTo('**')});
         } else {
           // add logic for italic in future itaration
         }
@@ -102,7 +64,7 @@ function splitParagraph(text) {
       default:
         fragments.push(
           {type: 'normal',
-           content: takeNormal()});
+            content: takeNormal()});
         break; 
     } 
   }
